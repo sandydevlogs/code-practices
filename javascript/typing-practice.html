@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed App</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+    }
+    h1 {
+      color: darkcyan;
+      text-transform: uppercase;
+    }
+    #targetSentence {
+      font-size: 1.2em;
+      margin-top: 20px;
+      text-align: left;
+    }
+    #inputArea {
+      margin-top: 10px;
+      width: 80%;
+      padding: 10px;
+      font-size: 1.1em;
+      border: 2px solid darkcyan;
+      border-radius: 10px;
+    }
+    #result {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+    #startButton {
+     margin-top: 20px;
+     padding: 10px 20px;
+     cursor: pointer;
+     background: cornflowerblue;
+     border: 0;
+     color: #fff;
+     border-radius: 5px;
+     font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Typing Speed App</h1>
+  <p id="targetSentence"></p>
+  <textarea id="inputArea" rows="4" placeholder="Start typing here"></textarea>
+  <p id="result"></p>
+  <button id="startButton">Start Test</button>
+
+  <script>
+    const sentences = "Welcome to sandydevlogs. This is simple typing speed test game. Please hit like button for more videos";
+
+    const startButton = document.getElementById("startButton");
+    const targetSentenceElement = document.getElementById("targetSentence");
+    const inputArea = document.getElementById("inputArea");
+    const resultElement = document.getElementById("result");
+
+    let currentSentence = "";
+    let startTime = 0;
+    let endTime = 0;
+
+
+    function startTest() {
+      currentSentence = sentences;
+      targetSentenceElement.textContent = currentSentence;
+      inputArea.value = "";
+      inputArea.focus();
+      startButton.disabled = true;
+      startTime = new Date().getTime();
+    }
+
+    function calculateTypingSpeed() {
+      const inputText = inputArea.value.trim();
+      endTime = new Date().getTime();
+      const elapsedTimeInSeconds = (endTime - startTime) / 1000;
+      const wordsTyped = inputText.split(" ").length;
+      const typingSpeed = Math.round((wordsTyped / elapsedTimeInSeconds) * 60);
+      const accuracy = calculateAccuracy(currentSentence, inputText);
+
+      resultElement.textContent = `Typing Speed: ${typingSpeed} WPM | Accuracy: ${accuracy}%`;
+      startButton.disabled = false;
+    }
+
+    function calculateAccuracy(target, input) {
+      const targetWords = target.split(" ");
+      const inputWords = input.split(" ");
+      let correctWords = 0;
+
+      for (let i = 0; i < Math.min(targetWords.length, inputWords.length); i++) {
+        if (targetWords[i] === inputWords[i]) {
+          correctWords++;
+        }
+      }
+
+      return ((correctWords / targetWords.length) * 100).toFixed(2);
+    }
+
+    startButton.addEventListener("click", startTest);
+    inputArea.addEventListener("input", calculateTypingSpeed);
+  </script>
+</body>
+</html>
