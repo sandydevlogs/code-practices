@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style type="text/css">
+      body {
+        padding: 0;
+      }
+      #img {
+        background: url("../images/img1.jpeg");
+        height: 250px;
+        width: 100%;
+        background-size: 100% 100%;
+      }
+      #toggleButton {
+        background: cornflowerblue;
+        border: 0;
+        border-radius: 5px;
+        padding: 10px;
+        color: #fff;
+        margin-top: 10px;
+        font-size: 18px;
+        text-transform: uppercase;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="img"></div>
+    <button id="toggleButton">Toggle Image</button>
+
+    <script type="text/javascript">
+      const imgDiv = document.getElementById("img");
+      const toggleButton = document.getElementById("toggleButton");
+
+      toggleButton.addEventListener("click", function () {
+        imgDiv.style.filter =
+          imgDiv.style.filter === "invert(100%)"
+            ? "invert(0%)"
+            : "invert(100%)";
+      });
+    </script>
+  </body>
+</html>
