@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Microsoft Logo</title>
+    <style type="text/css">
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f5f5f5;
+      }
+      .logo {
+        width: 200px;
+        height: 200px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        z-index: 1;
+      }
+      .square {
+        height: 100%;
+        width: 100%;
+      }
+      .square:nth-child(1) {
+        background-color: #f25022;
+      }
+      .square:nth-child(2) {
+        background-color: #7fba00;
+      }
+      .square:nth-child(3) {
+        background-color: #00a4ef;
+      }
+      .square:nth-child(4) {
+        background-color: #ffb900;
+      }
+      .animation {
+        width: 200px;
+        height: 100px;
+        color: #747474;
+        line-height: 100px;
+        animation: slide 1s ease-in-out;
+        font-size: 48px;
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+    <div class="animation">Microsoft</div>
+  </body>
+</html>
