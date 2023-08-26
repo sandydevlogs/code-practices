@@ -9,3 +9,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/3d.html
 
 #4 Microsoft Logo
 https://github.com/sandydevlogs/code-practices/blob/main/css/microsoft.html
+
+#5 Loader
+https://github.com/sandydevlogs/code-practices/blob/main/css/loader.html
