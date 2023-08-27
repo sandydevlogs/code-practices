@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progress Bar</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .progress-container {
+        width: 300px;
+        height: 20px;
+        background-color: #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .progress-bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(to right, #ff6b6b, #1e90ff);
+        border-radius: 10px;
+      }
+      .progress-text {
+        text-align: center;
+        color: #288cf3;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress"></div>
+    </div>
+    <p class="progress-text">0%</p>
+
+    <script type="text/javascript">
+      const progressBar = document.getElementById("progress");
+      const progressText = document.querySelector(".progress-text");
+
+      let progress = 0;
+      const targetProgress = 100;
+
+      function updateProgressBar() {
+        if (progress <= targetProgress) {
+          progressBar.style.width = `${progress}%`;
+          progressText.textContent = `${progress}%`;
+          progress++;
+          requestAnimationFrame(updateProgressBar);
+        }
+      }
+      updateProgressBar();
+    </script>
+  </body>
+</html>

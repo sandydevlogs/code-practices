@@ -18,3 +18,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/loader.html
 
 #5 Rain Effect
 https://github.com/sandydevlogs/code-practices/blob/main/javascript/rain.html
+
+#6 Progress Bar
+https://github.com/sandydevlogs/code-practices/blob/main/css/progressbar.html
