@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rain Fall Using Canvas</title>
+
+    <style type="text/css">
+      body {
+        background-image: url("https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="1000"></canvas>
+
+    <script type="text/javascript">
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // create array to store rain drop position
+      let raindrops = [];
+
+      // create rain drops
+      function createRaindrop() {
+        const x = Math.random() * canvas.width;
+        const y = 0;
+        const speed = Math.random() * 50;
+
+        return { x, y, speed };
+      }
+
+      // drow rain drop
+
+      function drawRaindrop(raindrop) {
+        ctx.beginPath();
+        ctx.moveTo(raindrop.x, raindrop.y);
+        ctx.lineTo(raindrop.x, raindrop.y + 10);
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+      }
+
+      // update rain drop poition
+      function drawScence() {
+        //clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (Math.random() < 20) {
+          raindrops.push(createRaindrop());
+        }
+
+        for (let i = 0; i < raindrops.length; i++) {
+          const raindrop = raindrops[i];
+          raindrop.y += raindrop.speed;
+
+          if (raindrop.y > canvas.height) {
+            raindrops.splice(i, 1);
+          }
+          drawRaindrop(raindrop);
+        }
+        requestAnimationFrame(drawScence);
+      }
+
+      drawScence();
+    </script>
+  </body>
+</html>

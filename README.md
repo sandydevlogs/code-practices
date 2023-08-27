@@ -12,3 +12,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/microsoft.html
 
 #5 Loader
 https://github.com/sandydevlogs/code-practices/blob/main/css/loader.html
+
+#5 Rain Effect
+https://github.com/sandydevlogs/code-practices/blob/main/css/loader.html
