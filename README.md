@@ -21,3 +21,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/javascript/rain.html
 
 #6 Progress Bar
 https://github.com/sandydevlogs/code-practices/blob/main/css/progressbar.html
+
+#6 Glowing Text
+https://github.com/sandydevlogs/code-practices/blob/main/css/glowing-text.html

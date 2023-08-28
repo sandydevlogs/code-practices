@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 10px;
+      background-color: #2c3e50;
+    }
+    .glow-text {
+      font-size: 4rem;
+      font-weight: bold;
+      text-align: center;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(-45deg, #ff00cc, #00d2ff, #3cff00);
+      animation: glow 2s ease-in-out infinite alternate, colorChange 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+      100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+      }
+    }
+    @keyframes colorChange {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="glow-text">
+  SandyDevLogs Awesome Glowing
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
