@@ -24,3 +24,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/progressbar.html
 
 #6 Glowing Text
 https://github.com/sandydevlogs/code-practices/blob/main/css/glowing-text.html
+
+#6 Glowing Animated Card
+https://github.com/sandydevlogs/code-practices/blob/main/css/card.html

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .card {
+        position: relative;
+        width: 300px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+      .card img {
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid;
+        animation: glow 2s ease-in-out infinite;
+      }
+      .glow-border {
+        position: absolute;
+        contain: "";
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        z-index: -1;
+        border-radius: 15px;
+        border: 2px solid transparent;
+        animation: glow 2s ease-in-out infinite;
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          border-color: rgba(0, 128, 255, 0.4);
+          box-shadow: 0 0 5px rgba(0, 128, 255, 0.4);
+        }
+        50% {
+          border-color: rgba(0, 128, 255, 0.7);
+          box-shadow: 0 0 20px rgba(0, 128, 255, 0.7);
+        }
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="glow-border"></div>
+      <img src="../images/user.jpeg" />
+      <h2>SandyDevLogs</h2>
+      <p>
+        This is a card with a glowing border animation. Please hit the like
+        button.
+      </p>
+    </div>
+  </body>
+</html>
