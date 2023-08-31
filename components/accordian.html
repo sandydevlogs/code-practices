@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style type="text/css">
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .accordion {
+        width: 300px;
+      }
+      .accordion-item {
+        background-color: #fff;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .accordion-header {
+        padding: 10px;
+        background-color: #3498bd;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .accordion-content {
+        padding: 10px;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #ecf0f1;
+        transition: max-height 0.5s ease, background-color 0.3s ease;
+      }
+      .active,
+      .active .accordion-header {
+        background-color: #e74c3c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header">Section 1</div>
+        <div class="accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Section 1</div>
+        <div class="accordion-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Section 1</div>
+        <div class="accordion-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Section 1</div>
+        <div class="accordion-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const parent = header.parentElement;
+          const isActive = parent.classList.contains("active");
+
+          accordionHeaders.forEach((otherHeader) => {
+            const otherParent = otherHeader.parentElement;
+            if (otherParent !== parent) {
+              otherParent.classList.remove("active");
+              otherParent.querySelector(
+                ".accordion-content"
+              ).style.maxHeight = 0;
+            }
+          });
+
+          if (!isActive) {
+            parent.classList.add("active");
+            const content = parent.querySelector(".accordion-content");
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            parent.classList.remove("active");
+            parent.querySelector(".accordion-content").style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

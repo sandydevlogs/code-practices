@@ -27,3 +27,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/glowing-text.html
 
 #6 Glowing Animated Card
 https://github.com/sandydevlogs/code-practices/blob/main/css/card.html
+
+#6 Accordion
+https://github.com/sandydevlogs/code-practices/blob/main/components/accordian.html
