@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style type="text/css">
+      #pascals-triangle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+      }
+      .row {
+        display: flex;
+        justify-content: center;
+      }
+      .cell {
+        width: 50px;
+        height: 50px;
+        background-color: lightgreen;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2px;
+      }
+      .cell:first-child,
+      .cell:last-child {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pascals-triangle"></div>
+    <script type="text/javascript">
+      function generatePascalTriangle(numRows) {
+        const triangle = [];
+        for (let i = 0; i < numRows; i++) {
+          const row = [];
+          for (let j = 0; j <= i; j++) {
+            if (j === 0 || j === i) {
+              row.push(1);
+            } else {
+              row.push(triangle[i - 1][j - 1] + triangle[i - 1][j]);
+            }
+          }
+          triangle.push(row);
+        }
+        return triangle;
+      }
+
+      function renderPascalsTriangle(triangle) {
+        const pascalsTriangle = document.getElementById("pascals-triangle");
+        for (let i = 0; i < triangle.length; i++) {
+          const rowElement = document.createElement("div");
+          rowElement.classList.add("row");
+          for (let j = 0; j < triangle[i].length; j++) {
+            const cellEment = document.createElement("div");
+            cellEment.classList.add("cell");
+            cellEment.textContent = triangle[i][j];
+            rowElement.appendChild(cellEment);
+          }
+          pascalsTriangle.appendChild(rowElement);
+        }
+      }
+
+      const numRows = 10;
+      const pascalsTriangle = generatePascalTriangle(numRows);
+      renderPascalsTriangle(pascalsTriangle);
+    </script>
+  </body>
+</html>

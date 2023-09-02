@@ -30,3 +30,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/card.html
 
 #6 Accordion
 https://github.com/sandydevlogs/code-practices/blob/main/components/accordian.html
+
+#6 Pascal Triangle
+https://github.com/sandydevlogs/code-practices/blob/main/javascript/pascal-triangle.html
