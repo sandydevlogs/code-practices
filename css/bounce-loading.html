@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .loader {
+        display: flex;
+        align-items: center;
+      }
+
+      .bounce1,
+      .bounce2,
+      .bounce3 {
+        width: 20px;
+        height: 20px;
+        background-color: #3498db;
+        border-radius: 50%;
+        margin: 0 5px;
+        animation: bounce 1s infinite ease-in-out;
+      }
+
+      .bounce2 {
+        animation-delay: 0.1s;
+      }
+
+      .bounce3 {
+        animation-delay: 0.2s;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+    </style>
+    <title>Bounce Loading Animation</title>
+  </head>
+  <body>
+    <div class="loader">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </body>
+</html>

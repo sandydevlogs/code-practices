@@ -16,20 +16,23 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/microsoft.html
 #5 Loader
 https://github.com/sandydevlogs/code-practices/blob/main/css/loader.html
 
-#5 Rain Effect
+#6 Rain Effect
 https://github.com/sandydevlogs/code-practices/blob/main/javascript/rain.html
 
-#6 Progress Bar
+#7 Progress Bar
 https://github.com/sandydevlogs/code-practices/blob/main/css/progressbar.html
 
-#6 Glowing Text
+#8 Glowing Text
 https://github.com/sandydevlogs/code-practices/blob/main/css/glowing-text.html
 
-#6 Glowing Animated Card
+#9 Glowing Animated Card
 https://github.com/sandydevlogs/code-practices/blob/main/css/card.html
 
-#6 Accordion
+#10 Accordion
 https://github.com/sandydevlogs/code-practices/blob/main/components/accordian.html
 
-#6 Pascal Triangle
+#11 Pascal Triangle
 https://github.com/sandydevlogs/code-practices/blob/main/javascript/pascal-triangle.html
+
+#12 Bounce Loading
+https://github.com/sandydevlogs/code-practices/blob/main/css/bounce-loading.html
