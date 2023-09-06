@@ -36,3 +36,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/javascript/pascal-trian
 
 #12 Bounce Loading
 https://github.com/sandydevlogs/code-practices/blob/main/css/bounce-loading.html
+
+#12 Dynamic Visuals
+https://github.com/sandydevlogs/code-practices/blob/main/javascript/dynamic-visual.html
