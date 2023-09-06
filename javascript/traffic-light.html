@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style type="text/css">
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .traffic-light {
+        width: 120px;
+        height: 320px;
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        border: 10px solid #848484;
+      }
+      .light {
+        width: 80px;
+        height: 80px;
+        background-color: #333;
+        border-radius: 50%;
+        margin: 10px 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      .stand {
+        width: 20px;
+        height: 300px;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+      .stand-base {
+        position: absolute;
+        top: 188%;
+        width: 100px;
+        height: 20px;
+        background: #333;
+      }
+
+      .red-light {
+        background-color: red;
+      }
+
+      .yellow-light {
+        background-color: yellow;
+      }
+
+      .green-light {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="traffic-light">
+      <div class="light red-light"></div>
+      <div class="light yellow-light"></div>
+      <div class="light green-light"></div>
+      <div class="stand"></div>
+      <div class="stand-base"></div>
+    </div>
+    <script type="text/javascript">
+      let currentLight = "red";
+
+      function changeLight() {
+        const redLight = document.querySelector(".red-light");
+        const yellowLight = document.querySelector(".yellow-light");
+        const greenLight = document.querySelector(".green-light");
+
+        switch (currentLight) {
+          case "red":
+            redLight.style.opacity = 1;
+            yellowLight.style.opacity = 0.3;
+            greenLight.style.opacity = 0.3;
+            currentLight = "yellow";
+            break;
+          case "yellow":
+            redLight.style.opacity = 0.3;
+            yellowLight.style.opacity = 1;
+            greenLight.style.opacity = 0.3;
+            currentLight = "green";
+            break;
+          case "green":
+            redLight.style.opacity = 0.3;
+            yellowLight.style.opacity = 0.3;
+            greenLight.style.opacity = 1;
+            currentLight = "red";
+            break;
+          default:
+            break;
+        }
+        setTimeout(changeLight, 3000);
+      }
+      changeLight();
+    </script>
+  </body>
+</html>
