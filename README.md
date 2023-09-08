@@ -42,3 +42,6 @@ https://github.com/sandydevlogs/code-practices/blob/main/javascript/dynamic-visu
 
 #14 Traffic Light Signal
 https://github.com/sandydevlogs/code-practices/blob/main/javascript/traffic-light.html
+
+#15 YouTube Play Button
+https://github.com/sandydevlogs/code-practices/blob/main/css/youtube.html
