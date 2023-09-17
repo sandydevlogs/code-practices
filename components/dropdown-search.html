@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searchable Select with Display</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #selectedValue {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select an Option</h1>
+        <select id="mySelect" class="select2">
+            <option>Search & Select</option>
+            <option value="Aarav Sharma">Aarav Sharma</option>
+            <option value="Priya Patel">Priya Patel</option>
+            <option value="Rohan Singh">Rohan Singh</option>
+            <option value="option4">Sneha Gupta</option>
+            <option value="Arjun Verma">Arjun Verma</option>
+            <option value="Nisha">Nisha</option>
+            <option value="Vikram">Vikram</option>
+            <option value="Kavita Mehta">Kavita Mehta</option>
+            <option value="Rajat Sharma">Rajat Sharma</option>
+            <option value="Preeti Khanna">Preeti</option>
+            <option value="Ravi Choudhury">Ravi</option>
+            <option value="Anika Desai">Anika Desai</option>
+        </select>
+        <div id="selectedValue"></div>
+    </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mySelect").select2();
+
+        $("#mySelect").on("change", function () {
+            // get selected option value
+            const selectedValue = $(this).val();
+
+            // display value
+            $("#selectedValue").text(`Selected value is ${selectedValue}`);
+        })
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
