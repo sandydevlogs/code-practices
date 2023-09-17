@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    margin: 0;
-    overflow: hidden;
-  }
 
-  canvas {
-    display: block;
-    background-color: #000;
-  }
-</style>
-<title>Moving Stars</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      background-color: #000;
+    }
+  </style>
+  <title>Moving Stars</title>
 </head>
+
 <body>
   <canvas id="starCanvas"></canvas>
   <script>
-    const canvas = document.getElementById("starCanvas")
-    const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById('starCanvas');
+    const ctx = canvas.getContext('2d');
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -36,10 +38,11 @@
         this.opacity = opacity;
         this.speed = Math.random() * 0.5 + 0.1;
       }
+
       update() {
         this.x -= this.speed;
         if (this.x < 0) {
-          this.x = canvas.width
+          this.x = canvas.width;
         }
       }
 
@@ -47,6 +50,7 @@
         ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
       }
     }
 
@@ -56,7 +60,7 @@
         const y = Math.random() * canvas.height;
         const radius = Math.random() * 2;
         const opacity = Math.random() * 0.8 + 0.2;
-        stars.push(new Star(x, y, radius, opacity))
+        stars.push(new Star(x, y, radius, opacity));
       }
     }
 
@@ -66,11 +70,12 @@
         star.update();
         star.draw();
       }
-      requestAnimationFrame(animate)
+      requestAnimationFrame(animate);
     }
 
     createStars();
     animate();
   </script>
 </body>
+
 </html>
