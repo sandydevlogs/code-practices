@@ -1,5 +1,41 @@
-Hello 
-<div class="input-group">
-    <div class="input-group-addon">$</div>
-    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, yellow, green, red, blue);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+    </style>
+    <title>Animated Background</title>
+</head>
+<body>
+    <div class="animated-background"></div>
+</body>
+</html>

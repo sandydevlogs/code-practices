@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background:-webkit-linear-gradient(-45deg,  #a9e4f7 0%,#0fb4e7 100%);
+            font-family: sans-serif;
+        }
+        .navbar{
+            background-color: #222;
+            border: 1px solid grey;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+        .nav-links {
+            width: 100%;
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links > li {
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .nav-links > li:hover {
+            background-color: #d71919;
+            background-size: 200% 100%;
+             background-position: right;
+        }
+        .nav-links > li > a{
+            color: #fff;
+            padding: 15px 15px;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        .nav-links > li > ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #222;
+            width: 200px;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid grey;
+            list-style: none;
+        }
+        .nav-links > li:hover > ul {
+            display: block;
+            background-color: #d71919;
+            box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+            border-radius: 10px;
+        }
+        .nav-links > li > ul > li > a{
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+        .nav-links > li > ul > li:hover{
+            background-color: #222;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li>
+                <a href="#">Services</a>
+                <ul>
+                    <li><a href="#">Service 1</a></li>
+                    <li><a href="#">Service 2</a></li>
+                    <li><a href="#">Service 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>

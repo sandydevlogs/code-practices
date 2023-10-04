@@ -45,3 +45,24 @@ https://github.com/sandydevlogs/code-practices/blob/main/javascript/traffic-ligh
 
 #15 YouTube Play Button
 https://github.com/sandydevlogs/code-practices/blob/main/css/youtube.html
+
+#16 JavaScript Animation Ballon
+https://github.com/sandydevlogs/code-practices/blob/main/javascript/ballon.html
+
+#17 JavaScript Digital Clock
+https://github.com/sandydevlogs/code-practices/blob/main/javascript/digital-clock.html
+
+#18 Follow mouse cursor
+https://github.com/sandydevlogs/code-practices/blob/main/javascript/mouse-follow.html
+
+#19 100 Subscribers Celebration
+https://github.com/sandydevlogs/code-practices/blob/main/javascript/sub.html
+
+#20 Animated Button
+https://github.com/sandydevlogs/code-practices/blob/main/css/animated-button.html
+
+#21 HTML inside Html
+https://github.com/sandydevlogs/code-practices/blob/main/css/html.html
+
+#22 Glowing Card
+https://github.com/sandydevlogs/code-practices/blob/main/css/glowingcard.html

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+
+<script type="text/javascript">
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function randomColor() {
+        return '#' + Math.random().toString(16).slice(2, 8);
+    }
+
+    function drawAnimatedCircle(x, y, radius, color, startTime) {
+        const currentTime = Date.now();
+        const elapsed = currentTime - startTime;
+        const maxDuration = 1000;
+
+        if (elapsed < maxDuration) {
+            const scale = 1 + (elapsed / maxDuration) * 4;
+            ctx.beginPath();
+            ctx.arc(x, y, radius * scale, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.globalAlpha = 1 - (elapsed / maxDuration); 
+            ctx.fill();
+            requestAnimationFrame(() => drawAnimatedCircle(x, y, radius, color, startTime));
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < 100; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const radius = Math.random() * 50;
+            const color = randomColor();
+            const startTime = Date.now();
+            drawAnimatedCircle(x, y, radius, color, startTime);
+        }
+        setTimeout(function() {
+                requestAnimationFrame(animate);
+            }, 500); 
+    }
+     animate();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
