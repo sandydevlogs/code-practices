@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+<div id="container">
+  <h1 class="thank"></h1>
+  <div id="counter">0</div>
+</div>
+<canvas id="confetti-canvas"></canvas>
+
+<script type="text/javascript">
+  const counterDiv = document.getElementById("counter");
+  const confettiCanvas = document.getElementById("confetti-canvas");
+  const ctx = confettiCanvas.getContext("2d");
+  confettiCanvas.height = window.innerHeight;
+  confettiCanvas.width = window.innerWidth
+
+  function createConfettiParticle() {
+    const size = Math.random() * 8 + 4;
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    const angle = Math.random() * 360;
+    const speed = Math.random() * 4 + 2;
+
+    return {
+            x,
+            y,
+            size,
+            angle,
+            speed,
+            rotation: Math.random() * 360,
+            color: `hsla(${Math.random() * 360}, 100%, 50%, 1)`
+        };
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      for (const confetti of confettiParticles) {
+        ctx.save();
+        ctx.translate(confetti.x, confetti.y);
+        ctx.rotate((confetti.rotation * Math.PI) / 180);
+        ctx.fillStyle = confetti.color;
+        ctx.fillRect(-confetti.size / 2, -confetti.size / 2, confetti.size, confetti.size);
+        ctx.restore();
+        confetti.x += Math.cos((confetti.angle * Math.PI) / 180) * confetti.speed;
+        confetti.y += Math.sin((confetti.angle * Math.PI) / 180) * confetti.speed;
+        confetti.rotation += confetti.speed * 0.5;
+
+        if (confetti.y > window.innerHeight) {
+          confetti.y = -10;
+        }
+      }
+      requestAnimationFrame(drawConfetti);
+    }
+
+    let confettiParticles = [];
+    let counter = 0;
+    function updateCounter() {
+      counter++;
+      counterDiv.textContent = counter;
+       if (counter < 100) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        for (let i = 0; i < 1000; i++) {
+          confettiParticles.push(createConfettiParticle());
+          document.querySelector(".thank").textContent = "Thank You Everyone🙏";
+      }
+      drawConfetti();
+    }
+  }
+   updateCounter();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
