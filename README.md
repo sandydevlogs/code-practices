@@ -66,3 +66,7 @@ https://github.com/sandydevlogs/code-practices/blob/main/css/html.html
 
 #22 Glowing Card
 https://github.com/sandydevlogs/code-practices/blob/main/css/glowingcard.html
+
+#22 Speak Using Javascript
+https://github.com/sandydevlogs/code-practices/blob/main/javascript/speak.html
+
