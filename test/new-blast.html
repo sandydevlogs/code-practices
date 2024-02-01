@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blast Canvas</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="blastCanvas" width="400" height="400"></canvas>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const canvas = document.getElementById("blastCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.addEventListener("click", function(event) {
+      createBlast(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    });
+
+    function createBlast(x, y) {
+      const numParticles = 100;
+      const blastRadius = 50;
+
+      for (let i = 0; i < numParticles; i++) {
+        const angle = (Math.PI * 2 * i) / numParticles;
+        const particleX = x + blastRadius * Math.cos(angle);
+        const particleY = y + blastRadius * Math.sin(angle);
+
+        ctx.beginPath();
+        ctx.arc(particleX, particleY, 3, 0, 2 * Math.PI);
+        ctx.fillStyle = getRandomColor();
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  });
+</script>
+
+</body>
+</html>

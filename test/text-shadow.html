@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walking Stick Figure</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .stick-figure {
+      position: relative;
+      margin: 50vh auto;
+      width: 100px;
+      height: 200px;
+      animation: walk 2.5s linear infinite;
+    }
+
+    .head,
+    .body,
+    .left-arm,
+    .right-arm,
+    .left-leg,
+    .right-leg {
+      background-color: #ffffff;
+      position: absolute;
+    }
+
+    .head {
+      top: -18px;
+    left: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    }
+
+    .body {
+      top: 20px;
+      left: 50px;
+      width: 20px;
+      height: 80px;
+    }
+
+    .left-arm,
+    .right-arm {
+      top: 30px;
+      width: 10px;
+      height: 40px;
+    }
+
+    .left-arm {
+      left: 50px;
+      transform-origin: top right;
+      transform: rotate(-45deg);
+      animation: moveLeft 0.5s alternate infinite;
+    }
+
+    .right-arm {
+      left: 50px;
+      transform-origin: top left;
+      transform: rotate(45deg);
+      animation: moveRight 0.5s alternate infinite;
+    }
+
+    .left-leg,
+    .right-leg {
+      top: 90px;
+      width: 10px;
+      height: 60px;
+    }
+
+    .left-leg {
+      left: 55px;
+      transform-origin: top right;
+      transform: rotate(-45deg);
+      animation: moveLeft 0.5s alternate infinite;
+    }
+
+    .right-leg {
+      left: 55px;
+      transform-origin: top left;
+      transform: rotate(45deg);
+      animation: moveRight 0.5s alternate infinite;
+    }
+
+    @keyframes walk {
+      0% {
+        transform: translateX(-400px);
+      }
+      100% {
+        transform: translateX(200px);
+      }
+    }
+
+    @keyframes moveLeft {
+      0%, 100% {
+        transform: rotate(-45deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes moveRight {
+      0%, 100% {
+        transform: rotate(45deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stick-figure">
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="left-arm"></div>
+    <div class="right-arm"></div>
+    <div class="left-leg"></div>
+    <div class="right-leg"></div>
+  </div>
+
+</body>
+</html>

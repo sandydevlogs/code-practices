@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .heart {
+      height: 150px;
+      width: 150px;
+      background: #ccc;
+      margin: 150px auto;
+      transform: rotate(45deg);
+      transform-origin: center;
+      position: relative;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ccc;
+    }
+    .heart::before{
+      left: -75px;
+    }
+    .heart::after{
+      top: -75px;
+    }
+    .heart:hover, .heart:hover::before, .heart:hover::after {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<div class="heart"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

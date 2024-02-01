@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    canvas {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fireworksCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("fireworksCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const fireworks = [];
+    const particles = [];
+    
+    function createFirework() {
+      const firework = {
+        x: Math.random() * canvas.width,
+        y: canvas.height,
+        targetX: Math.random() * canvas.width,
+        targetY: Math.random() * canvas.height,
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+        speed: 2,
+      };
+      fireworks.push(firework);
+    }
+
+    function createParticle(firework) {
+      for (let i = 0; i < 100; i++) {
+        const particle = {
+          x: firework.x,
+          y: firework.y,
+          vx: (Math.random() - 0.5) * 5,
+          vy: (Math.random() - 0.5) * 5,
+          color: firework.color,
+          size: 2,
+          life: 100,
+        };
+        particles.push(particle);
+      }
+    }
+
+    function update() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      fireworks.forEach((firework, index) => {
+        if (firework.y <= firework.targetY) {
+          createParticle(firework);
+          fireworks.splice(index, 1);
+        } else {
+          firework.y -= firework.speed;
+        }
+      });
+
+      particles.forEach((particle, index) => {
+        if (particle.life <= 0) {
+          particles.splice(index, 1);
+        } else {
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+          particle.life--;
+        }
+      });
+
+      fireworks.forEach(firework => {
+        ctx.beginPath();
+        ctx.strokeStyle = firework.color;
+        ctx.moveTo(firework.x, firework.y);
+        ctx.lineTo(firework.targetX, firework.targetY);
+        ctx.stroke();
+      });
+
+      particles.forEach(particle => {
+        ctx.beginPath();
+        ctx.fillStyle = particle.color;
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(update);
+    }
+
+    setInterval(createFirework, 200);
+    update();
+  </script>
+</body>
+</html>

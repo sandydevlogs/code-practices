@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 18px;
+            font-family: sans-serif;
+            font-weight: 100;
+            text-align: justify;
+        }
+        .control input {
+            height: 35px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-size: 18px;
+        }
+        .btn {
+            padding: 13px 15px;
+            font-size: 18px;
+            background: #009688;
+            border: none;
+            color: #fff;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .wrapper {
+            width: 500px;
+            padding: 15px;
+        }
+        .highlight {
+            background: yellow;
+            padding: 2px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="control">
+        <input type="text" id="inputText" placeholder="Text">
+        <button onclick="searchText()" class="btn">Search</button>
+    </div>
+    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+</div>
+<script type="text/javascript">
+    function searchText() {
+        let textToSearch = document.getElementById("inputText").value;
+        let content = document.querySelector("p");
+
+        
+        content.innerHTML = content.innerHTML.replace(/<span class="highlight">|<\/span>/gi, '');
+        
+        
+        let regex = new RegExp(`(${textToSearch})`, 'gi');
+        content.innerHTML = content.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+

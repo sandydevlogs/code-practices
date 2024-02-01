@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: black;
+        }
+
+        .location {
+            height: 80px;
+            width: 80px;
+            background: red;
+            border-radius: 60px 60px 0px 60px;
+            transform: rotate(45deg);
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        .location::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            position: absolute;
+            border-radius: 50%;
+            transform: translate(15px, 15px);
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: rotate(45deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(45deg) translateY(15px);
+            }
+            100% {
+                transform: rotate(45deg) translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="location"></div>
+</body>
+</html>

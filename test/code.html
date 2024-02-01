@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+    .btn {
+      background: red;
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 18px;
+      border: 0;
+      border-radius: 50px;
+      text-transform: uppercase;
+      transform: translateY(-900px);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <button id="btn" class="btn">First Button</button>
+</div>
+<script type="text/javascript">
+  var btn = document.getElementById("btn");
+  var wrapper = document.querySelector(".wrapper");
+  var tranX = ['20px','40px','60px','80px','100px','-20px','-40px'];
+
+  for (var i = 0; i < 100; i++) {
+    
+    var newBtn = document.createElement("button");
+    newBtn.className = "btn";
+    newBtn.textContent = "Button Demo";
+    newBtn.style.background = randomColor();
+   
+    
+    const degree = (Math.floor(Math.random() * 9) + 1) * 20;
+    newBtn.animate([
+        { transform: 'translateY(-340px) rotate(0deg)' },
+        { transform: `translate(${tranX[Math.floor(Math.random() * tranX.length)]}, 340px) rotate(${degree}deg)` },
+        { transform: `translate(${tranX[Math.floor(Math.random() * tranX.length)]}, 250px) rotate(${degree}deg)` },
+      ], {
+        duration: 5000,
+        easing: 'linear',
+        iterations: 1,
+        PlaybackDirection: 'forward',
+        fill: 'forwards',
+        delay: Math.floor(Math.random() * 50) * 50
+      });
+    
+
+    wrapper.appendChild(newBtn);
+  }
+  function randomColor() {
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+
+    var color = "#" + red.toString(16) + green.toString(16) + blue.toString(16);
+
+    return color;
+  }
+</script>
+</body>
+</html>
