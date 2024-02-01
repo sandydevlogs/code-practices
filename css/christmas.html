@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 30px 0;
+            background: #000;
+            overflow: hidden;
+        }
+        .wrapper {
+            position: relative;
+            text-align: center;
+            color: #fff;
+        }
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .triangle {
+            margin-bottom: -60px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: green;
+            animation: light 1s linear infinite;
+        }
+        .triangle-1 {
+            height: 100px;
+            width: 100px;
+        }
+        .triangle-2 {
+            height: 150px;
+            width: 150px;
+        }
+        .triangle-3 {
+            height: 200px;
+            width: 200px;
+        }
+        .triangle-4 {
+            height: 200px;
+            width: 250px;
+        }
+        .star {
+            height: 50px;
+            width: 50px;
+            margin-bottom: -10px;
+            background: #F9C646;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: lighting 1s linear infinite;
+        }
+        h2 {
+            margin-top: 80px;
+            text-transform: uppercase;
+            font-weight: 100;
+            color: #04ff04;
+            overflow: hidden;
+            height: 20px;
+            animation: showText 3s linear;
+            font-size: 18px;
+        }
+        @keyframes lighting {
+            0% { background: #F9C646; }
+            100% { background: red; }
+        }
+
+        @keyframes light {
+          
+          100% {
+            background-color: #04ff04;
+          }
+        }
+        @keyframes showText {
+          0% {
+            width: 10%;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="tree">
+        <div class="star"></div>
+        <div class="triangle triangle-1"></div>
+        <div class="triangle triangle-2"></div>
+        <div class="triangle triangle-3"></div>
+        <div class="triangle triangle-4"></div>
+    </div>
+    <h2>Merry Christmas To All Developer's❤️</h2>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

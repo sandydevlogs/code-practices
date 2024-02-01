@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #2d2d2d;
+            margin: 0;
+        }
+        .wrapper {
+            position: relative;
+        }
+        .mug {
+            height: 250px;
+            width: 120px;
+            background: #fff;
+            border-radius: 15%;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .beer {
+            height: 210px;
+            width: 120px;
+            background: #C7930D;
+            position: absolute;
+            bottom: 0;
+        }
+        .top {
+            width: 115px;
+            height: 30px;
+            background: #EEE8D9;
+            border-radius: 50%;
+            margin-bottom: -14px;
+            border: 1px solid #ccc;
+        }
+        .handle {
+            height: 102px;
+            width: 80px;
+            border: 10px solid #C6D0DB;
+            border-radius: 50%;
+            position: absolute;
+            top: 30%;
+            right: -62px;
+            z-index: -1;
+        }
+        .drip, .drip1, .drip2 {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background: #fff;
+            position: absolute;
+            top: -10px;
+        }
+        .drip1 {
+            left: 35px;
+            top: -5px;
+        }
+        .drip2 {
+            left: 60px;
+            top: -12px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="top"></div>
+    <div class="mug">
+        <div class="beer"></div>
+    </div>
+    <div class="handle"></div>
+    <div class="drip"></div>
+    <div class="drip1"></div>
+    <div class="drip2"></div>
+</div>
+</body>
+</html>

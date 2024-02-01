@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body {
+            --bg-color-light:#ffffff;
+            --text-color-light: #333333;
+            --bg-color-dark: #333333;
+            --bg-color-dark-black: #000;
+            --text-color-dark: #ffffff;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            transition: background-color 0.5s, color: 0.5s;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        body.dark-mode {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+        header, footer {
+            background-color: #2196F3;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .dark-mode header, .dark-mode footer {
+            background-color: var(--bg-color-dark-black);
+        }
+        .container {
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            display: none;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: 0.4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+        input:checked + .slider {
+            background-color: #64B5F6;
+        }
+        input:checked + .slider {
+            transform: translateX(26px);
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1>Light/Dark Mode Toggle</h1>
+    </header>
+    <div class="container">
+        <p>This is a simple example of a light/dark mode toggle. Click on the toggle switch to switch between light and dark modes.</p>
+        <label class="switch">
+            <input type="checkbox" id="modeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <footer>
+        <p>&copy; 2023 Light/Dark Mode Toggle Example</p>
+    </footer>
+    <script type="text/javascript">
+        const modeToggle = document.getElementById("modeToggle");
+
+        modeToggle.addEventListener("change", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
+</html>

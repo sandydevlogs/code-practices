@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+    .wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 30px solid #fff;
+      transform: rotate(90deg);
+      margin-right: 10px;
+    }
+    .line{
+      height: 5px;
+      background-color: #fff;
+      width: 10px;
+      animation: line-animation 2s ease-in-out forwards;
+    }
+    .color {
+      width: 1%;
+      height: 5px;
+      animation: colorChange 1s forwards;
+      animation-delay: 1s;
+    }
+    @keyframes line-animation{
+      0%{
+        width: 10px;
+      }
+      100%{
+        width: 200px;
+      }
+    }
+    @keyframes colorChange{
+      0%{
+        background-color: #fff;
+      }
+      100%{
+        background-color: red;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="triangle"></div>
+  <div class="line">
+    <div class="color"></div>
+  </div>
+</div>
+</body>
+</html>
+
+
+

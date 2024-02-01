@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #7fdbda;
+        }
+        .smart-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #fc5c65 49.5%, transparent 49.5%, transparent 50.5%, #19d3da 50.5%);
+        }
+        .smart-circle:hover {
+            animation: roTate 2s linear infinite;
+        }
+        @keyframes roTate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="smart-circle"></div>
+</body>
+</html>

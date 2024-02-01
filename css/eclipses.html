@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #1e1e1e, #000000);
+      margin: 0;
+    }
+    .wrapper {
+      position: relative;
+    }
+    .sun {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 2px -2px 50px 10px rgb(255 255 255 / 80%);
+    }
+    .elipses {
+      height: 195px;
+      width: 195px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      animation: eclipseAnimation 7s linear alternate;
+    }
+    @keyframes eclipseAnimation {
+      0% {
+        transform: translateX(80px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="sun">
+    <div class="elipses"></div>
+  </div>
+</div>
+</body>
+</html>

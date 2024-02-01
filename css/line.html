@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #1a1a1a;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+      position: relative;
+    }
+    .line {
+      height: 70px;
+      width: 15px;
+      background: linear-gradient(180deg, rgba(11, 174, 240, 0.8) 0%, rgba(11, 174, 240, 0.5) 50%, rgba(11, 174, 240, 0.8) 100%);
+      transform-origin: bottom;
+    }
+    .ball {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      left: -75%;
+      bottom: 0;
+      animation: move 2s linear forwards;
+    }
+    @keyframes move {
+      0% {
+        left: -75%;
+      }
+      50% {
+        left: -50%;
+      }
+      100% {
+        left: -8%;
+        animation-timing-function: steps(1, end);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="ball"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+<script>
+    const ball = document.querySelector('.ball');
+    const lines = document.querySelectorAll('.line');
+
+    ball.addEventListener('animationend', () => {
+        animateLines();
+    });
+
+    function animateLines() {
+        lines.forEach((line, index) => {
+            const delay = index * 1000; // 1000ms = 1s
+
+            line.animate(
+                { transform: ['rotate(0deg)', 'rotate(45deg)', 'rotate(65deg)'] },
+                {
+                    duration: 1000,
+                    delay: delay,
+                    iterations: 1,
+                    fill: 'forwards'
+                }
+            );
+        });
+    }
+</script>
+</body>
+</html>

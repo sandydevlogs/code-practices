@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+<input type="text" id="taskInput" placeholder="Add new task" name="">
+<button onclick="addTask()">Add Task</button>
+<ul id="taskList"></ul>
+
+<script type="text/javascript">
+  function addTask() {
+    const taskInput = document.getElementById("taskInput")
+    const taskList = document.getElementById("taskList");
+    const taskText = taskInput.value.trim();
+
+    if (taskText === '') return;
+
+    const listItem = document.createElement("li")
+    listItem.textContent = taskText
+
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push(taskText)
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    taskList.appendChild(listItem)
+    taskInput.value = '';
+  }
+
+  function loadTasks() {
+    const taskList = document.getElementById("taskList");
+    const tasks = JSON.parse(localStorage.getItem('tasks'))
+
+    for (const task of tasks) {
+      const listItem = document.createElement("li");
+      listItem.textContent = task;
+      taskList.appendChild(listItem)
+    }
+  }
+
+  window.addEventListener('load', loadTasks);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

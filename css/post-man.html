@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .circle {
+      border-radius: 50%;
+      border: 2px solid #F1693A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .circle-outer {
+      height: 230px;
+      width: 230px;
+      animation: rotate 2s linear infinite;
+    }
+    .circle-middle {
+      height: 180px;
+      width: 180px;
+      animation: rotate 3s linear infinite;
+    }
+    .circle-inner {
+      height: 120px;
+      width: 120px;
+      animation: rotate 4s linear infinite;
+    }
+    .circle-main {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      background: #F1693A;
+    }
+    .dot {
+      height: 20px;
+      width: 20px;
+      background: #F1693A;
+      border-radius: 50%;
+      position: absolute;
+      top: -11px;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="circle-outer circle">
+  <div class="dot"></div>
+  <div class="circle-middle circle">
+    <div class="dot"></div>
+    <div class="circle-inner circle">
+      <div class="dot"></div>
+      <div class="circle-main"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

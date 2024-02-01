@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: black;
+    }
+    .battery-container {
+      width: 150px;
+      text-align: center;
+      position: relative;
+    }
+    .battery {
+      width: 100%;
+      height: 80px;
+      border: 2px solid #f6f6f6;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .charge {
+      width: 0;
+      height: 100%;
+      background-color: #4CAF50;
+      animation: chargeAnimation 1s linear infinite;
+    }
+    .percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+    }
+    .b-top {
+      position: absolute;
+      top: 32px;
+      right: -8px;
+      height: 15px;
+      width: 2px;
+      border: 2px solid #ccc;
+      border-left: 0;
+    }
+    @keyframes chargeAnimation {
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="battery-container">
+    <div class="battery">
+      <div class="charge"></div>
+      <div class="percentage">0%</div>
+    </div>
+    <div class="b-top"></div>
+  </div>
+<script type="text/javascript">
+  const chargeAnimation = document.querySelector(".charge");
+  const percentageText = document.querySelector(".percentage");
+
+  chargeAnimation.addEventListener("animationiteration", () => {
+    let p = parseFloat(percentageText.textContent);
+    if (p < 100) {
+      p += 1;
+      percentageText.textContent = `${p}%`;
+      chargeAnimation.style.width = `${p}%`;
+    } else {
+      chargeAnimation.style.width = "100%";
+      chargeAnimation.style.animation = "unset";
+    }
+  })
+</script>
+</body>
+</html>

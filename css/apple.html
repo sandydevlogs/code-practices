@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+        }
+        .wrapper {
+            position: relative;
+        }
+        .apple {
+            height: 230px;
+            width: 250px;
+            background: white;
+            border-radius: 35% 35% 41% 41% / 42% 42% 75% 75%;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .apple:before {
+            content: '';
+            height: 60px;
+            width: 60px;
+            background: white;
+            border-radius: 100px 0;
+            position: absolute;
+            top: -24%;
+            left: 48%;
+            z-index: 2;
+        }
+        .apple-base {
+            height: 100px;
+            width: 120px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 95%;
+        }
+        .apple-top {
+            height: 90px;
+            width: 120px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -32%;
+            z-index: 1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .apple-right {
+            background: black;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            z-index: 2;
+            top: 25%;
+            right: -60px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="apple-top"></div>
+    <div class="apple"></div>
+    <div class="apple-base"></div>
+    <div class="apple-right"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

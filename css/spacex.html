@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #041A32;
+    }
+    .earth {
+      position: relative;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      border: 2px solid white;
+      animation: moveRocket 5s linear infinite;
+    }
+    .rocket {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @keyframes moveRocket {
+      0%{
+        transform: translateX(-50%) translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateX(50%) translateY(0) rotate(90deg);
+      }
+      50% {
+        transform: translateX(50%) translateY(50%) rotate(180deg);
+      }
+      75% {
+        transform: translateX(-50%) translateY(0) rotate(270deg);
+      }
+      100% {
+        transform: translateX(-50%) translateY(0) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="earth">
+  <div class="rocket">🚀</div>
+</div>
+</body>
+</html>

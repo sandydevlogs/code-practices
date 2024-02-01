@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #color-box {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border: 2px solid #333;
+    }
+    #color-text {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    #generate-button {
+      font-size: 18px;
+      margin-top: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #0074d9;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="color-box"></div>
+  <div id="color-text">Click the button to generate!</div>
+  <button id="generate-button">Generate Color</button>
+
+  <script type="text/javascript">
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function updateColor() {
+      var randomColor = getRandomColor();
+      document.getElementById('color-box').style.backgroundColor = randomColor;
+      document.getElementById('color-text').textContent = 'Random Color: ' + randomColor;
+    }
+
+    document.getElementById('generate-button').addEventListener('click', updateColor);
+    updateColor();
+  </script>
+</body>
+</html>

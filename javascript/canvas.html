@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+    }
+
+    canvas {
+      border: 2px solid #fff;
+    }
+  </style>
+  <title>Particle Effect</title>
+</head>
+<body>
+  <canvas id="particleCanvas" width="600" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const particles = [];
+
+    function Particle(x, y, radius, color, velocity) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.color = color;
+      this.velocity = velocity;
+
+      this.draw = function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+      };
+
+      this.update = function () {
+        this.draw();
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+      };
+    }
+
+    function createParticles() {
+      const radius = Math.random() * 5 + 2;
+      const x = canvas.width / 2;
+      const y = canvas.height / 2;
+      const color = `hsl(${Math.random() * 360}, 50%, 50%)`;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 2 + 1;
+      const velocity = {
+        x: Math.cos(angle) * speed,
+        y: Math.sin(angle) * speed
+      };
+
+      particles.push(new Particle(x, y, radius, color, velocity));
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((particle, index) => {
+        particle.update();
+
+        // Remove particles that go out of bounds
+        if (
+          particle.x - particle.radius < 0 ||
+          particle.x + particle.radius > canvas.width ||
+          particle.y - particle.radius < 0 ||
+          particle.y + particle.radius > canvas.height
+        ) {
+          particles.splice(index, 1);
+        }
+      });
+    }
+
+    canvas.addEventListener('mousemove', createParticles);
+
+    animate();
+  </script>
+</body>
+</html>

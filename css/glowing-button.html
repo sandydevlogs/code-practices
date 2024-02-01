@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .glow-button {
+      background-color: #FF5722;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      width: 200px;
+      height: 50px;
+      transition: all 0.3s ease;
+    }
+    .glow-button:hover {
+      animation: glow 1s ease infinite alternate;
+    }
+    @keyframes glow {
+      0%{
+        box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+      }
+      50%{
+        box-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+      }
+      100%{
+        box-shadow: 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000;
+      }
+    }
+  </style>
+</head>
+<body>
+<button class="glow-button">Hover Me</button>
+</body>
+</html>
+
+
+
+
+
+
+

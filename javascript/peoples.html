@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        margin: 10;
+        padding: 0;
+      }
+     
+      #user-info {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      img {
+        border-radius: 50%;
+        margin: 10px 0;
+      }
+      button {
+        background-color: #0074d9;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+<button onclick="fetchRandomUser()">Get Random User</button>
+<div id="user-info"></div>
+
+<script type="text/javascript">
+  async function fetchRandomUser() {
+    try {
+      const response = await fetch('https://randomuser.me/api/');
+      if (!response.ok) {
+        throw new Error(`Error ${response.status}`);
+      }
+      const data = await response.json();
+      const user = data.results[0];
+
+      const userInfo = `<div id="user-card">
+        <img src="${user.picture.large}">
+        <h2>${user.name.first} ${user.name.last}</h2>
+        <p>Email: ${user.email}</p>
+        <p>Location: ${user.location.city}, ${user.location.country}</p>
+        <a href="#">Send message</a>
+      </div>`;
+      document.getElementById("user-info").innerHTML = userInfo
+    } catch (error) {
+      console.log("Error", error)
+    }
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

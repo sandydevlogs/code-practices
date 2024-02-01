@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .jumping-text-container {
+            font-size: 58px;
+        }
+        .jumping-letter {
+            display: inline-block;
+            animation: jump-animation 0.5s ease-in-out infinite;
+            transform-origin: center;
+            transition: color 0.3s ease;
+        }
+        .jumping-letter:nth-child(1) {
+            animation-delay: 0.1s;
+            color: #ff5733;
+        }
+        .jumping-letter:nth-child(2) {
+            animation-delay: 0.2s;
+            color: #ffdb33;
+        }
+        .jumping-letter:nth-child(3) {
+            animation-delay: 0.3s;
+            color: #33ff33;
+        }
+        .jumping-letter:nth-child(4) {
+            animation-delay: 0.4s;
+            color: #3333ff;
+        }
+        .jumping-letter:nth-child(5) {
+            animation-delay: 0.5s;
+            color: #ff33ff;
+        }
+        .jumping-letter:nth-child(6) {
+            animation-delay: 0.6s;
+            color: #ff5733;
+        }
+        .jumping-letter:nth-child(7) {
+            animation-delay: 0.7s;
+            color: #ffbd33;
+        }
+        .jumping-letter:nth-child(8) {
+            animation-delay: 0.8s;
+            color: #33ff33;
+        }
+        .jumping-letter:nth-child(9) {
+            animation-delay: 0.9s;
+            color: #3333ff;
+        }
+        .jumping-letter:nth-child(10) {
+            animation-delay: 1s;
+            color: #ff33ff;
+        }
+        @keyframes jump-animation {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="jumping-text-container">
+        <span class="jumping-letter">S</span>
+        <span class="jumping-letter">U</span>
+        <span class="jumping-letter">B</span>
+        <span class="jumping-letter">S</span>
+        <span class="jumping-letter">C</span>
+        <span class="jumping-letter">R</span>
+        <span class="jumping-letter">I</span>
+        <span class="jumping-letter">B</span>
+        <span class="jumping-letter">E</span>
+    </div>
+</body>
+</html>

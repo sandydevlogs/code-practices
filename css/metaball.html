@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #222;
+    }
+    .metaball-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+    .metaball {
+      position: absolute;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      background: #3498db;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+    .metaball1{
+      animation-name: metaball1Animation;
+    }
+    .metaball2 {
+      animation-name: metaball2Animation;
+    }
+    .metaball3 {
+      animation-name: metaball3Animation;
+      margin-left: 100px;
+    }
+    .metaball4 {
+      margin-left: 100px;
+      animation-name: metaball4Animation;
+    }
+    @keyframes metaball1Animation {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(200px);
+      }
+    }
+    @keyframes metaball2Animation {
+      0%, 100% {
+        transform: translateX(200px);
+      }
+      50% {
+        transform: translateX(0);
+      }
+    }
+    @keyframes metaball3Animation {
+      0%, 100% {
+        transform: translateY(-200px);
+      }
+      50% {
+        transform: translateX(0);
+      }
+    }
+    @keyframes metaball4Animation {
+      0%, 100% {
+        transform: translateY(200px);
+      }
+      50% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="metaball-container">
+  <div class="metaball metaball1"></div>
+  <div class="metaball metaball2"></div>
+  <div class="metaball metaball3"></div>
+  <div class="metaball metaball4"></div>
+</div>
+</body>
+</html>

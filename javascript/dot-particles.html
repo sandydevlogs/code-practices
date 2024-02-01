@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script type="text/javascript">
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const colors = ['#00bcd4', '#4caf50', '#ffeb3b', '#ff5722', '#9c27b0'];
+
+  function createParticle() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const size = Math.random() * 5 + 2;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    return {x, y, size, color};
+  }
+
+  function draw() {
+    const particle = createParticle();
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+    ctx.fillStyle = particle.color;
+    ctx.fill();
+  }
+
+  function update() {
+    draw();
+    requestAnimationFrame(update)
+  }
+  update();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

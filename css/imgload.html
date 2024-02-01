@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .loading-container {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+      border: 8px solid #3498db;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+    .loading-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: blurAnimation 2s alternate-reverse 1;
+    }
+    @keyframes blurAnimation {
+      0% {
+        filter: blur(0);
+      }
+      100% {
+        filter: blur(20px);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="loading-container">
+  <img class="loading-image" src="https://i.ytimg.com/vi/9DlTdNc_ugs/hq720.jpg">
+</div>
+</body>
+</html>

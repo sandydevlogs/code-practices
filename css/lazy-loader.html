@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #00bcd4;
+        }
+        .wrapper {
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .dot {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .dot-move {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            background: #fff;
+            left: 0;
+            animation: move 3s cubic-bezier(0.4, 0, 1, 1) infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+            20% {
+                left: 10px;
+                width: 50px;
+                border-radius: 30px;
+            }
+            40%,50% {
+                left: 60px;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+            70% {
+                left: 70px;
+                width: 50px;
+                border-radius: 30px;
+            }
+            100% {
+                left: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot-move"></div>
+</div>
+</body>
+</html>

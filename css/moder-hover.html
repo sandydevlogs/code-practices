@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #000;
+      }
+      .modern-button {
+        border:1px solid #007BFF;
+        padding: 10px 20px;
+        background: none;
+        color: #007BFF;
+        text-transform: uppercase;
+        transition: 0.9s;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .modern-button::before{
+      content: '';
+      background: #007BFF;
+      border-radius: 50% 50% 0 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: 0.9s;
+      height: 0%;
+      z-index: -1;
+    }
+    .btn2::before{
+      top: 0;
+      border-radius: 0 0 50% 50%;
+    }
+    .modern-button:hover{
+      color: #fff;
+    }
+    .modern-button:hover::before{
+      height: 200%;
+      bottom: 0;
+    }
+    .btn2:hover::before{
+      top: 0;
+      height: 200%;
+    }
+    
+     
+    </style>
+    <title>Instagram Icon</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <button class="modern-button">Modern Button</button>
+      <button class="modern-button btn2">Modern Button</button>
+    </div>
+  </body>
+</html>
