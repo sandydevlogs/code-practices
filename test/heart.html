@@ -1,56 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <style type="text/css">
-    body{
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
+      background: linear-gradient(135deg, #3494e6, #ec6ead);
     }
-    .heart {
-      height: 150px;
-      width: 150px;
-      background: #ccc;
-      margin: 150px auto;
-      transform: rotate(45deg);
-      transform-origin: center;
+
+    .toggle-container {
       position: relative;
+      width: 60px;
+      height: 34px;
     }
-    .heart::before, .heart::after {
+
+    .toggle-checkbox {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 34px;
+      background-color: #ddd;
+      border-radius: 17px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .toggle-label:before {
       content: '';
       position: absolute;
-      width: 150px;
-      height: 150px;
+      top: 2px;
+      left: 2px;
+      width: 30px;
+      height: 30px;
+      background-color: #fff;
       border-radius: 50%;
-      background: #ccc;
+      transition: transform 0.3s;
     }
-    .heart::before{
-      left: -75px;
+
+    .toggle-checkbox:checked + .toggle-label {
+      background-color: #4caf50; /* Green color when toggled */
     }
-    .heart::after{
-      top: -75px;
-    }
-    .heart:hover, .heart:hover::before, .heart:hover::after {
-      background: red;
+
+    .toggle-checkbox:checked + .toggle-label:before {
+      transform: translateX(26px);
     }
   </style>
+  <title>Toggle Switch</title>
 </head>
 <body>
-<div class="heart"></div>
+  <div class="toggle-container">
+    <input type="checkbox" class="toggle-checkbox" id="toggleSwitch">
+    <label class="toggle-label" for="toggleSwitch"></label>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

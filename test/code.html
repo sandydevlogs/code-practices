@@ -33,7 +33,7 @@
 <script type="text/javascript">
   var btn = document.getElementById("btn");
   var wrapper = document.querySelector(".wrapper");
-  var tranX = ['20px','40px','60px','80px','100px','-20px','-40px'];
+  var tranX = ['0','40px','60px','80px','100px','-20px','-40px'];
 
   for (var i = 0; i < 100; i++) {
     
@@ -48,7 +48,7 @@
         { transform: 'translateY(-340px) rotate(0deg)' },
         { transform: `translate(${tranX[Math.floor(Math.random() * tranX.length)]}, 340px) rotate(${degree}deg)` },
         { transform: `translate(${tranX[Math.floor(Math.random() * tranX.length)]}, 250px) rotate(${degree}deg)` },
-      ], {
+      ], {  
         duration: 5000,
         easing: 'linear',
         iterations: 1,
