@@ -1,29 +1,33 @@
-# Code Practices
+For More Video
+Visit Our Channel:- [YouTube Channel](https://www.youtube.com/channel/UC7F8XBsPRcV-n3XEDzS6kNA)
 
-Welcome to the Code Practices repository! This repository contains a collection of web development and programming examples that you can use for learning and inspiration. Each code practice is linked to its respective source code for your convenience.
+# Table of Contents
 
-## Table of Contents
-1. [Typing App](#1-typing-app)
-2. [Filter-Invert Css](#2-filter-invert-css)
-3. [3D Animation Css](#3-3d-animation-css)
-4. [Microsoft Logo](#4-microsoft-logo)
-5. [Loader](#5-loader)
-6. [Rain Effect](#6-rain-effect)
-7. [Progress Bar](#7-progress-bar)
-8. [Glowing Text](#8-glowing-text)
-9. [Glowing Animated Card](#9-glowing-animated-card)
-10. [Accordion](#10-accordion)
-11. [Pascal Triangle](#11-pascal-triangle)
-12. [Bounce Loading](#12-bounce-loading)
-13. [Dynamic Visuals](#13-dynamic-visuals)
-14. [Traffic Light Signal](#14-traffic-light-signal)
-15. [YouTube Play Button](#15-youtube-play-button)
-16. [JavaScript Animation Balloon](#16-javascript-animation-balloon)
-17. [JavaScript Digital Clock](#17-javascript-digital-clock)
-18. [Follow Mouse Cursor](#18-follow-mouse-cursor)
-19. [100 Subscribers Celebration](#19-100-subscribers-celebration)
-20. [Animated Button](#20-animated-button)
-21. [HTML inside HTML](#21-html-inside-html)
-22. [Glowing Card](#22-glowing-card)
-23. [Speak Using JavaScript](#23-speak-using-javascript)
-24. [Jai Shree Ram](#24-jai-shree-ram)
+1. [Typing App](https://github.com/sandydevlogs/code-practices/blob/main/javascript/typing-practice.html)
+2. [Filter-Invert Css](https://github.com/sandydevlogs/code-practices/blob/main/css/filter-invert.html)
+3. [3D Animation Css](https://github.com/sandydevlogs/code-practices/blob/main/css/3d.html)
+4. [Microsoft Logo](https://github.com/sandydevlogs/code-practices/blob/main/css/microsoft.html)
+5. [Loader](https://github.com/sandydevlogs/code-practices/blob/main/css/loader.html)
+6. [Rain Effect](https://github.com/sandydevlogs/code-practices/blob/main/javascript/rain.html)
+7. [Progress Bar](https://github.com/sandydevlogs/code-practices/blob/main/css/progressbar.html)
+8. [Glowing Text](https://github.com/sandydevlogs/code-practices/blob/main/css/glowing-text.html)
+9. [Glowing Animated Card](https://github.com/sandydevlogs/code-practices/blob/main/css/card.html)
+10. [Accordion](https://github.com/sandydevlogs/code-practices/blob/main/components/accordian.html)
+11. [Pascal Triangle](https://github.com/sandydevlogs/code-practices/blob/main/javascript/pascal-triangle.html)
+12. [Bounce Loading](https://github.com/sandydevlogs/code-practices/blob/main/css/bounce-loading.html)
+13. [Dynamic Visuals](https://github.com/sandydevlogs/code-practices/blob/main/javascript/dynamic-visual.html)
+14. [Traffic Light Signal](https://github.com/sandydevlogs/code-practices/blob/main/javascript/traffic-light.html)
+15. [YouTube Play Button](https://github.com/sandydevlogs/code-practices/blob/main/css/youtube.html)
+16. [JavaScript Animation Balloon](https://github.com/sandydevlogs/code-practices/blob/main/javascript/ballon.html)
+17. [JavaScript Digital Clock](https://github.com/sandydevlogs/code-practices/blob/main/javascript/digital-clock.html)
+18. [Follow Mouse Cursor](https://github.com/sandydevlogs/code-practices/blob/main/javascript/mouse-follow.html)
+19. [100 Subscribers Celebration](https://github.com/sandydevlogs/code-practices/blob/main/javascript/sub.html)
+20. [Animated Button](https://github.com/sandydevlogs/code-practices/blob/main/css/animated-button.html)
+21. [HTML inside Html](https://github.com/sandydevlogs/code-practices/blob/main/css/html.html)
+22. [Glowing Card](https://github.com/sandydevlogs/code-practices/blob/main/css/glowingcard.html)
+23. [Speak Using Javascript](https://github.com/sandydevlogs/code-practices/blob/main/javascript/speak.html)
+24. [Jai Shree Ram](https://github.com/sandydevlogs/code-practices/blob/main/css/jai-shree-ram.html)
+
+## 🚀 About Me
+I'm a full stack Laravel developer with more than 4 years experience in Laravel, Node, Vue, React etc.
+
